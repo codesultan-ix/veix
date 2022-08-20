@@ -6,7 +6,11 @@ const login_required = require('../middleware/login_required')
 const User = require("../models/user");
 const OTP = require("../models/otp");
 
-const { ggmail, ppassword } = require('../config/key')
+const ggmail = process.env.GMAIL_USEREMAIL;
+const ppassword = process.env.GMAIL_PWD;
+
+// const { ggmail, ppassword } = require('../config/key');
+
 
 
 router.post('/getotp', async (req, res) => {
