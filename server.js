@@ -29,6 +29,11 @@ app.use("/settings", settingsController);
 app.use("/chat", chatController);
 
 // Schedule tasks to be run on the server.
+// cron.schedule("59 23 * * *", () => {
+//   console.log("[cron]: task running every day at 11:59 PM");
+//   utility.deleteExpiredOTPs();
+// });
+
 cron.schedule("* * * * *", function () {
   var dateTime = moment.tz(Date.now(), "Asia/Calcutta");
   var t = dateTime.format();
@@ -334,7 +339,7 @@ app.get("/", (req, res) => {
 // server.listen(listen_port, () => print("Listening"));
 
 server.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(` app listening at http://localhost:${port}`);
 });
 // const path = require('path')
 // const http = require('http')

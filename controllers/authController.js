@@ -5,7 +5,7 @@ var nodemailer = require("nodemailer");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 // const {JWT_SECRET} = require('../config/key')
-const {JWT_SECRET} = require('../config/key')
+const JWT_SECRET = process.env.NODE_ENV === "production" ? require('../config/key') : 'YOUR SECRET'
 // const Token = mongoose.model('token');
 // const Refresh = mongoose.model('refresh');
 
