@@ -15,7 +15,7 @@ const Schedule = require("./models/schedule");
 const User = require("./models/user");
 const Call = require("./models/call");
 const axios = require("axios");
-const port = 3000;
+const port = process.env.PORT || 4000
 
 app.use(bodyParser.json());
 
