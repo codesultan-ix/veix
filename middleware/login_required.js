@@ -1,7 +1,8 @@
 const jwt=require('jsonwebtoken')
 const mongoose = require("mongoose");
 const User = require("../models/user");
-const {JWT_SECRET} = require('../config/key')
+// const {JWT_SECRET} = require('../config/key')
+const JWT_SECRET = process.env.NODE_ENV === "production" ? process.env.JWT_SECRET : 'YOUR SECRET'
 
 const auth =async(req,res,next)=>{
     try{
