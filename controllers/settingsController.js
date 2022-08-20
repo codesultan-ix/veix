@@ -5,7 +5,10 @@ var nodemailer = require("nodemailer");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 const login_required = require('../middleware/login_required')
-const { ggmail, ppassword } = require('../config/key')
+// const { ggmail, ppassword } = require('../config/key')
+const ggmail = process.env.GMAIL_USEREMAIL;
+const ppassword = process.env.GMAIL_PWD;
+
 
 router.post('/resetPassword', async (req, res) => {
    console.log(req.body)

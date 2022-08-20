@@ -9,7 +9,10 @@ const Chat = require('../models/chat');
 const Call = require('../models/call');
 const Schedule = require('../models/schedule')
 const login_required = require('../middleware/login_required')
-const { ggmail, ppassword } = require('../config/key');
+// const { ggmail, ppassword } = require('../config/key');
+const ggmail = process.env.GMAIL_USEREMAIL;
+const ppassword = process.env.GMAIL_PWD;
+
 var ObjectId = require('mongodb').ObjectID;
 
 router.get('/getAllChats', login_required, async (req, res) => {
